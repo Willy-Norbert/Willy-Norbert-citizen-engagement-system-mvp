@@ -65,7 +65,7 @@ const LoginPage = () => {
         } else if (res.data.user.role === 'department') {
           navigate('/department-dashboard');
         } else {
-          navigate('/');
+          navigate('/citizen-dashboard');
         }
       }
     } catch (error) {

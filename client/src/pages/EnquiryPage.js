@@ -90,8 +90,12 @@ const SubmitButton = styled(Button)({
 
 const Enquiry = () => {
   const categories = [
-    { value: 'category1', label: 'BroadBand Connection' },
-    { value: 'category2', label: 'TV SetupBox Connection' },
+    { value: 'category1', label: 'Sanitation' },
+    { value: 'category2', label: 'Roads & Infrastructure' },
+    { value: 'category3', label: 'Water Supply' },
+    { value: 'category4', label: 'Power & Electricity' },
+     { value: 'category5', label: 'Health & Safety' },
+    
   ];
   
   const [formData, setFormData] = useState({
