@@ -3,14 +3,17 @@ const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 
 // Configure email transport
+require('dotenv').config();
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'willynorbert53@gmail.com',
-    pass: 'ubkkmjpxbdbvewys'
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   },
   secure: true
 });
+
 
 // Get User model
 const User = mongoose.model('User');

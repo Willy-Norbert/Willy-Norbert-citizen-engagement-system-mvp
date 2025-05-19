@@ -8,8 +8,9 @@ const mongoose = require('mongoose');
 // Import user model
 const User = mongoose.model('User');
 
-// JWT Secret
-const JWT_SECRET = 'your-secret-key'; // In production, use environment variables
+require('dotenv').config();
+const JWT_SECRET = process.env.JWT_SECRET;
+// In production, use environment variables
 
 // Register route
 router.post('/register', async (req, res) => {

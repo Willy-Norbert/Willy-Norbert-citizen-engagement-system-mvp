@@ -1,6 +1,5 @@
 
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
@@ -19,10 +18,13 @@ app.get('/api/ping', (req, res) => {
 });
 
 // Connect to MongoDB with better error handling
+require('dotenv').config();  // Load .env variables at the very top
+const mongoose = require('mongoose');
+
 const connectDB = async () => {
   try {
-    // Using the srv format for MongoDB Atlas connection
-    await mongoose.connect('mongodb+srv://wiseacademy:01402@cluster0.bsxehn0.mongodb.net/complain?retryWrites=true&w=majority', {
+    // Connect using SRV URI from .env
+    await mongoose.connect(process.env.MONGO_URI_SRV, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
@@ -30,10 +32,9 @@ const connectDB = async () => {
   } catch (err) {
     console.error('❌ MongoDB connection error:', err.message);
     console.log('Trying alternative connection method...');
-    
-    // Try alternative connection without DNS resolution
+
     try {
-      await mongoose.connect('mongodb://wiseacademy:01402@ac-h88m0xu-shard-00-00.bsxehn0.mongodb.net:27017,ac-h88m0xu-shard-00-01.bsxehn0.mongodb.net:27017,ac-h88m0xu-shard-00-02.bsxehn0.mongodb.net:27017/complain?ssl=true&replicaSet=atlas-q3sbm9-shard-0&authSource=admin&retryWrites=true&w=majority', {
+      await mongoose.connect(process.env.MONGO_URI_ALT, {
         useNewUrlParser: true,
         useUnifiedTopology: true
       });
@@ -44,6 +45,9 @@ const connectDB = async () => {
     }
   }
 };
+
+module.exports = connectDB;
+
 
 // Call the connect function
 connectDB();
