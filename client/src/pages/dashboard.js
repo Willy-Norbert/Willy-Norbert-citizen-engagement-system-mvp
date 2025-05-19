@@ -38,7 +38,7 @@ import ReceiptIcon from '@mui/icons-material/Receipt';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { Button } from '@mui/material';
 
-axios.defaults.baseURL = "http://localhost:8080"
+axios.defaults.baseURL = "https://willy-norbert-citizen-engagement-system.onrender.com/"
 
 const drawerWidth = 240;
 

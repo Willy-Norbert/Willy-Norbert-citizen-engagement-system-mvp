@@ -29,7 +29,7 @@ import BlockIcon from '@mui/icons-material/Block';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Navbar from '../Components/Navbar';
-axios.defaults.baseURL = "http://localhost:8080";
+axios.defaults.baseURL = "https://willy-norbert-citizen-engagement-system.onrender.com/";
 
 // Styled components
 const StyledPaper = styled(Paper)(({ theme }) => ({

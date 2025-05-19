@@ -20,7 +20,7 @@ import SendIcon from '@mui/icons-material/Send';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ErrorIcon from '@mui/icons-material/Error';
 
-axios.defaults.baseURL = "http://localhost:8080";
+axios.defaults.baseURL = "https://willy-norbert-citizen-engagement-system.onrender.com/";
 
 // Custom styled components
 const StyledPaper = styled(Paper)(({ theme }) => ({

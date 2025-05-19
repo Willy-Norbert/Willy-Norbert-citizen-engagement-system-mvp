@@ -15,7 +15,7 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import LockIcon from '@mui/icons-material/Lock';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 
-axios.defaults.baseURL="http://localhost:8080";
+axios.defaults.baseURL="https://willy-norbert-citizen-engagement-system.onrender.com/";
 
 // Custom styled components
 const StyledPaper = styled(Paper)(({ theme }) => ({

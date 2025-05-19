@@ -29,7 +29,7 @@ import AnnouncementIcon from '@mui/icons-material/Announcement';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Navbar from '../Components/Navbar';
-axios.defaults.baseURL = "http://localhost:8080";
+axios.defaults.baseURL = "https://willy-norbert-citizen-engagement-system.onrender.com/";
 // Styled components
 const StyledPaper = styled(Paper)(({ theme }) => ({
   borderRadius: '16px',
