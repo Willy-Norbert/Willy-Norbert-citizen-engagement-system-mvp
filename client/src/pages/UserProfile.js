@@ -65,7 +65,7 @@ const UserProfile = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8080/complaints/notifications/detailed-preferences', {
+      const response = await fetch('https://willy-norbert-citizen-engagement-system.onrender.com/complaints/notifications/detailed-preferences', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -89,7 +89,7 @@ const UserProfile = () => {
   const saveNotificationPreferences = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8080/complaints/notifications/preferences', {
+      const response = await fetch('https://willy-norbert-citizen-engagement-system.onrender.com/complaints/notifications/preferences', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
